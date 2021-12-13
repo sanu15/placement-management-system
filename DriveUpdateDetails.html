@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Placement Management System</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:powderblue;">
+	<div class="container text-center">
+		<div>
+			<h1>Drive Registration - Add-Edit</h1>
+		</div>
+		<form th:action="@{/drive_register}" th:object="${drive}" 
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Company Name: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{companyName}" class="form-control" required />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Drive Date: </label>
+				<div class="col-8">
+		<input type="text" th:field="*{driveDate}" class="form-control" required />
+
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Location: </label>
+				<div class="col-8">
+		<input type="text" th:field="*{location}" class="form-control" required />
+				</div>
+			</div>
+			
+			<div>
+				<button type="submit" class="btn btn-primary">Submit</button> 
+			</div>
+		</div>
+		</form>
+	</div>
+</body>
+</html>
